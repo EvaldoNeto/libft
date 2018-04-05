@@ -1,0 +1,68 @@
+* TODO PART1
+
+** DONE memset
+** DONE bzero
+** DONE memcpy
+** DONE memccpy
+** DONE memmove
+** DONE memchr
+** DONE memcmp
+** DONE strlen
+** DONE strdup
+** DONE strcpy
+** DONE strncpy
+** DONE strcat
+** DONE strncat
+** TODO strlcat
+** DONE strchr
+** DONE strrchr
+** DONE strstr
+** DONE strnstr
+** DONE strcmp
+** DONE strncmp
+** DONE atoi
+** DONE isalpha
+** DONE isdigit
+** TODO isalnum
+** DONE isascii
+** DONE isprint
+** TODO toupper
+** TODO tolower
+   
+
+* TODO PART 2
+
+** DONE ft_memalloc
+** DONE ft_memdel
+** DONE ft_strnew
+** DONE ft_strdel
+** DONE ft_strclr
+** DONE ft_striter
+** DONE ft_striteri
+** TODO ft_strmap
+** TODO ft_strmapi
+** TODO ft_strequ
+** TODO ft_strnequ
+** TODO ft_strsub
+** TODO ft_strjoin
+** TODO ft_strtrim
+** TODO ft_strsplit
+** TODO ft_itoa
+** DONE ft_putchar
+** DONE ft_putstr
+** DONE ft_putendl
+** DONE ft_putnbr
+** DONE ft_putchar_fd
+** DONE ft_putstr_fd
+** DONE ft_putendl_fd
+** DONE ft_putnbr_fd
+   
+
+* TODO Bonus Part
+
+** TODO ft_lstnew
+** TODO ft_lstdelone
+** TODO ft_lstdel
+** TODO ft_lstadd
+** TODO ft_lstiter
+** TODO ft_lstmap
