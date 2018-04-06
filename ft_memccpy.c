@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 18:47:18 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/05 20:05:50 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/06 15:33:34 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (*(char *)(src + i) != c)
-			*(char *)(dest + i) = *(char *)(src + i);
+		if (*(unsigned char *)(src + i) != (unsigned char)c)
+			*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
 		else
 		{
-			*(char *)(dest + i) = *(char *)(src + i);
-			return (void *)(src + i + 1);
+			*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
+			return (unsigned char *)(dest + i + 1);
 		}
 		i++;
 	}

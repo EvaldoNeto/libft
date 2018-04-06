@@ -6,11 +6,12 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:25:30 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/05 20:02:08 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/06 16:52:47 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {

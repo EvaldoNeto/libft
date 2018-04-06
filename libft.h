@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:42:22 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/05 19:47:32 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/06 14:04:15 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strtrim(char const *s);
 char		**ft_strsplit(char const *s, char c);
+char		*ft_itoa(int n);
 
 #endif

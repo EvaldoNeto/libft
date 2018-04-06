@@ -6,7 +6,7 @@
 #    By: eneto <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/19 14:56:05 by eneto             #+#    #+#              #
-#    Updated: 2018/04/05 19:59:03 by eneto            ###   ########.fr        #
+#    Updated: 2018/04/06 14:59:31 by eneto            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -68,7 +68,8 @@ SRCS =	ft_atoi.c		\
 		ft_strsub.c		\
 		ft_strtrim.c	\
 		ft_tolower.c	\
-		ft_toupper.c
+		ft_toupper.c	\
+		ft_itoa.c
 
 OBJ = $(SRCS:.c=.o)
 
@@ -102,4 +103,4 @@ clean:
 fclean: clean
 	@/bin/rm -f $(NAME) $(LIB_NAME) libft.so
 
-re: clean all 
+re: fclean all
