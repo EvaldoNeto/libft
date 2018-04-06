@@ -22,7 +22,7 @@ static int		num_of_words(char const *s, char c)
 	i = 0;
 	if (s[0] != c)
 		n++;
-	while (s[i + 1])
+	while (s[i] && s[i + 1])
 	{
 		if (s[i] == c && s[i + 1] != c)
 			n++;
@@ -46,7 +46,7 @@ static int		**words_pos(char const *s, char c, int n_words)
 		return (NULL);
 	if (s[0] != c)
 		pos[0][i] = 0;
-	while (s[j + 1])
+	while (s[j] && s[j + 1])
 	{
 		if (s[j] == c && s[j + 1] != c)
 			pos[0][i] = j + 1;
