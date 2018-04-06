@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:25:30 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/06 16:52:47 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/06 17:38:33 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	i = 0;
 	while (str[i])
 	{
-		str[i] = f(s[i]);
+		str[i] = (*f)(s[i]);
 		i++;
 	}
 	return (char *)(str);

@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:35:44 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/05 22:53:54 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/06 19:07:04 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,21 +73,45 @@ char			**ft_strsplit(char const *s, char c)
 	n = 0;
 	while (s[n])
 		n++;
-	if (n == 0)
-		return (NULL);
 	n_words = num_of_words(s, c);
 	pos = words_pos(s, c, n_words);
 	i = 0;
 	if (!(str = (char **)malloc(sizeof(char *) * (n_words + 1))))
-		return (NULL);
+		return (str);
 	while (i < n_words)
 	{
 		if(!(*(str + i) = ft_strsub(s, pos[0][i], pos[1][i] - pos[0][i] + 1)))
-			return (NULL);
+		{
+			i--;
+			while (i >= 0)
+			{
+				free(*(str + i));
+				*(str + i) = NULL;
+				i--;
+			}
+			return str;
+		}
 		i++;
 	}
 	if(!(*(str + i) = (char *)malloc(sizeof(char))))
-		return NULL;
+		return (str);
 	*(str + i) = NULL;
 	return (str);
 }
+
+/*int main()
+{
+	char *s = "";
+	char **r = ft_strsplit(s, '\65');
+
+	//char *s = "      split       this for   me  !       ";
+	//char **r = ft_strsplit(s, ' ');
+
+	while (*r)
+	{
+		for (int j = 0; j < 10; j++)
+			printf("mopa %d : %x\n", j, **r);
+		r++;
+	}
+	return (0);
+	}*/
