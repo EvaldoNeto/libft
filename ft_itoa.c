@@ -12,6 +12,8 @@
 
 #include "libft.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 static unsigned int	mod(int n)
 {
@@ -55,4 +57,23 @@ char				*ft_itoa(int n)
 		aux++;
 	}
 	return (str);
+}
+
+int main()
+{
+  srand(clock());
+  int i = 0;
+  char *s;
+  int n;
+
+  while (i < 10)
+    {
+      n = rand();
+      s = ft_itoa(n);
+      if(atoi(s) == n)
+	printf("%s : %d\n", s, n);
+      i++;
+    }
+  printf("OK\n");
+  return (0);
 }
