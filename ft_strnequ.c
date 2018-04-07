@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:30:41 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/05 20:01:27 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/07 18:51:58 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
+	if ((s1 && !s2) || (!s1 && s2))
+		return (0);
+	if (!s1 && !s2)
+		return (1);
 	if (ft_strncmp(s1, s2, n) != 0)
 		return (0);
 	else

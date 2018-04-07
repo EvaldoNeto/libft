@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:38:49 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/05 20:00:21 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/07 20:10:27 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,19 @@ char	*ft_strtrim(char const *s)
 	int		j;
 	char	*str;
 
-	i = 0;
 	j = 0;
-	while (s[i])
-		i++;
+	if (!s)
+		return (NULL);
+	i = ft_strlen((char *)s);
 	i--;
 	while (s[j] == ' ' || s[j] == '\n' || s[j] == '\t')
 		j++;
 	if (j > 0 && !s[j])
-		return ("");
+	{
+		if (!(str = (char *)malloc(sizeof(char))))
+			str[0] = '\0';
+		return (char *)(str);
+	}
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 		i--;
 	if (!(str = (char *)malloc(sizeof(char) * (i - j + 2))))

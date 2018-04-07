@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:29:00 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/05 20:01:44 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/07 19:36:36 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 		if (s1[i] == '\0' && s2[i] == '\0')
 			return (0);
 	}
+	if (i == n)
+		return (0);
 	return ((int)(unsigned char)s1[i] - (int)(unsigned char)s2[i]);
 }

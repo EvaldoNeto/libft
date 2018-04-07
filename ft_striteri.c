@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:19:15 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/05 20:02:40 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/07 19:42:10 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	unsigned int i;
 
 	i = 0;
-	while (s[i])
+	if (!f)
+		return ;
+	while (s && s[i])
 	{
 		f(i, s + i);
 		i++;

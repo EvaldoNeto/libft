@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:35:44 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/06 19:07:04 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/07 19:08:02 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,31 @@ static int		num_of_words(char const *s, char c)
 	return (n);
 }
 
+static int		**malloc_matrix(int i, int j)
+{
+	int **pos;
+
+	if (!(pos = (int **)malloc(sizeof(int *) * j)))
+		return (NULL);
+	if (!(*pos = (int *)malloc(sizeof(int) * i)))
+		return (NULL);
+	if (!(*(pos + 1) = (int *)malloc(sizeof(int) * i)))
+		return (NULL);
+	return (pos);
+}
+
 static int		**words_pos(char const *s, char c, int n_words)
 {
 	int **pos;
 	int i;
 	int j;
 
-	j = 0;
 	i = 0;
-	if(!(pos = (int **)malloc(sizeof(int *) * 2)))
-	  return (NULL);
-	if (!(*pos = (int *)malloc(sizeof(int) * n_words)))
-		return (NULL);
-	if (!(*(pos + 1) = (int *)malloc(sizeof(int) * n_words)))
+	j = 0;
+	if (!(pos = malloc_matrix(n_words, 2)))
 		return (NULL);
 	if (s[0] && s[0] != c)
-		pos[0][i] = 0;
+		pos[0][0] = 0;
 	while (s[j] && s[j + 1])
 	{
 		if (s[j] == c && s[j + 1] != c)
@@ -67,12 +76,10 @@ char			**ft_strsplit(char const *s, char c)
 	int		n_words;
 	int		**pos;
 	int		i;
-	int n;
 	char	**str;
 
-	n = 0;
-	while (s[n])
-		n++;
+	if (!s)
+		return (NULL);
 	n_words = num_of_words(s, c);
 	pos = words_pos(s, c, n_words);
 	i = 0;
@@ -80,19 +87,15 @@ char			**ft_strsplit(char const *s, char c)
 		return (str);
 	while (i < n_words)
 	{
-		if(!(*(str + i) = ft_strsub(s, pos[0][i], pos[1][i] - pos[0][i] + 1)))
+		if (!(*(str + i) = ft_strsub(s, pos[0][i], pos[1][i] - pos[0][i] + 1)))
 		{
-			i--;
-			while (i >= 0)
-			{
-				free(*(str + i));
-				*(str + i) = NULL;
-				i--;
-			}
-			return str;
+			while (i-- >= 0)
+				ft_memdel((void **)(str + i));
+			return (str);
 		}
 		i++;
 	}
+	ft_memdel((void **)pos);
 	*(str + i) = NULL;
 	return (str);
 }

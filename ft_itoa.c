@@ -6,14 +6,12 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 13:30:13 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/06 14:57:11 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/07 20:40:45 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
 static unsigned int	mod(int n)
 {
@@ -32,6 +30,8 @@ static int			number_of_digits(int n)
 		n_digits++;
 		aux = aux / 10;
 	}
+	if (n < 0)
+		n_digits++;
 	return (n_digits);
 }
 
@@ -43,8 +43,6 @@ char				*ft_itoa(int n)
 
 	n_digits = number_of_digits(n);
 	aux = 0;
-	if (n < 0)
-		n_digits++;
 	if (!(str = (char *)malloc(sizeof(char) * (n_digits + 1))))
 		return (NULL);
 	str[n_digits] = '\0';
@@ -61,19 +59,28 @@ char				*ft_itoa(int n)
 
 int main()
 {
-  srand(clock());
-  int i = 0;
-  char *s;
-  int n;
+	char *ret;
 
-  while (i < 10)
-    {
-      n = rand();
-      s = ft_itoa(n);
-      if(atoi(s) == n)
-	printf("%s : %d\n", s, n);
-      i++;
-    }
-  printf("OK\n");
-  return (0);
+	ret = ft_itoa(0);
+	printf("%s : 0\n", ret);
+
+	free(ret);
+	ret = ft_itoa(-123);
+	printf("%s : -123\n", ret);
+
+	free(ret);
+	ret = ft_itoa(123);
+	printf("%s : 123\n", ret);
+
+	free(ret);
+	ret = ft_itoa(-2147483648);
+	printf("%s : -2147483648\n", ret);
+
+	free(ret);
+	ret = ft_itoa(2147483647);
+	printf("%s : 2147483647\n", ret);
+
+	free(ret);
+	return (0);
 }
+
