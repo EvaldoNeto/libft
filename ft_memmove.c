@@ -11,37 +11,27 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	temp[n];
 	size_t			i;
 
 	i = 0;
-	while (i < n)
-	{
-		temp[i] = *(unsigned char *)(src + i);
+	if ((unsigned long)dest > (unsigned long)src)
+	  {
+	    while (i < n)
+	      {
+		*(char *)(dest + n - i - 1) = *(char *)(src + n - i - 1);
 		i++;
-	}
-	i = 0;
-	while (i < n)
-	{
-		*(unsigned char *)(dest + i) = temp[i];
+	      }
+	  }
+	else
+	  {
+	     while (i < n)
+	      {
+		*(char *)(dest + i) = *(char *)(src + i);
 		i++;
-	}
+	      }
+	  }
 	return (dest);
-}
-
-int main()
-{
-	int size = 128 * 1024 * 1024;
-	char *dst = (char *)malloc(sizeof(char) * size);
-	char *data = (char *)malloc(sizeof(char) * size);
-
-	printf("MOPA\n");
-	ft_memmove(dst, data, size);
-
-	return (0);
 }

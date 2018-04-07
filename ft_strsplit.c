@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int		num_of_words(char const *s, char c)
 {
@@ -20,7 +19,7 @@ static int		num_of_words(char const *s, char c)
 
 	n = 0;
 	i = 0;
-	if (s[0] != c)
+	if (s[0] && s[0] != c)
 		n++;
 	while (s[i] && s[i + 1])
 	{
@@ -39,12 +38,13 @@ static int		**words_pos(char const *s, char c, int n_words)
 
 	j = 0;
 	i = 0;
-	pos = (int **)malloc(sizeof(int *) * 2);
+	if(!(pos = (int **)malloc(sizeof(int *) * 2)))
+	  return (NULL);
 	if (!(*pos = (int *)malloc(sizeof(int) * n_words)))
 		return (NULL);
 	if (!(*(pos + 1) = (int *)malloc(sizeof(int) * n_words)))
 		return (NULL);
-	if (s[0] != c)
+	if (s[0] && s[0] != c)
 		pos[0][i] = 0;
 	while (s[j] && s[j + 1])
 	{
@@ -57,7 +57,7 @@ static int		**words_pos(char const *s, char c, int n_words)
 		}
 		j++;
 	}
-	if (s[j] != c)
+	if (s[j] && s[j] != c)
 		pos[1][i] = j;
 	return (pos);
 }
@@ -93,25 +93,6 @@ char			**ft_strsplit(char const *s, char c)
 		}
 		i++;
 	}
-	if(!(*(str + i) = (char *)malloc(sizeof(char))))
-		return (str);
 	*(str + i) = NULL;
 	return (str);
 }
-
-/*int main()
-{
-	char *s = "";
-	char **r = ft_strsplit(s, '\65');
-
-	//char *s = "      split       this for   me  !       ";
-	//char **r = ft_strsplit(s, ' ');
-
-	while (*r)
-	{
-		for (int j = 0; j < 10; j++)
-			printf("mopa %d : %x\n", j, **r);
-		r++;
-	}
-	return (0);
-	}*/
