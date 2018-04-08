@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:34:15 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/07 20:38:38 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/08 20:44:30 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	int i;
 	int len;
 
-	i = ft_strlen((char *)s);
+	i = (int)ft_strlen(s);
 	len = i;
 	while (i >= 0)
 	{

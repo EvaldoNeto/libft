@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:22:53 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/06 16:39:56 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/08 20:24:22 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size)
 		size_src++;
 	if (size == 0)
 		return (size_src);
-	while (i < size - 1)
+	while (i < size - 1 && src[i - size_dest])
 	{
 		dst[i] = src[i - size_dest];
 		i++;

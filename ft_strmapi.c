@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:26:46 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/07 18:46:27 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/08 20:35:49 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int	i;
-	char			*str;
+	size_t		i;
+	char		*str;
 
 	if (s)
 	{

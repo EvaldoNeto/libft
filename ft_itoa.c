@@ -6,12 +6,11 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 13:30:13 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/07 20:40:45 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/08 20:41:43 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include <stdlib.h>
 
 static unsigned int	mod(int n)
 {
@@ -48,7 +47,7 @@ char				*ft_itoa(int n)
 	str[n_digits] = '\0';
 	if (n < 0)
 		str[0] = '-';
-	while (aux < n_digits && str[n_digits - aux - 1] != '-')
+	while (aux < n_digits && (str[n_digits - aux - 1] != '-' || n > 0))
 	{
 		str[n_digits - aux - 1] = mod(n) % 10 + '0';
 		n = n / 10;
@@ -56,31 +55,3 @@ char				*ft_itoa(int n)
 	}
 	return (str);
 }
-
-int main()
-{
-	char *ret;
-
-	ret = ft_itoa(0);
-	printf("%s : 0\n", ret);
-
-	free(ret);
-	ret = ft_itoa(-123);
-	printf("%s : -123\n", ret);
-
-	free(ret);
-	ret = ft_itoa(123);
-	printf("%s : 123\n", ret);
-
-	free(ret);
-	ret = ft_itoa(-2147483648);
-	printf("%s : -2147483648\n", ret);
-
-	free(ret);
-	ret = ft_itoa(2147483647);
-	printf("%s : 2147483647\n", ret);
-
-	free(ret);
-	return (0);
-}
-

@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:42:22 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/06 18:49:56 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/08 20:44:04 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 void		ft_putchar(char c);
 void		ft_putstr(char *str);
 void		ft_putendl(char const *s);
-int			ft_strlen(char *str);
+size_t		ft_strlen(const char *str);
 void		ft_putnbr(int n);
 void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *str, int fd);

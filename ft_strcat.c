@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:07:38 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/05 20:03:46 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/08 20:33:12 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strcat(char *dest, const char *src)
 {
-	int size_dest;
-	int size_src;
-	int i;
+	size_t size_dest;
+	size_t size_src;
+	size_t i;
 
 	size_src = 0;
 	size_dest = ft_strlen(dest);

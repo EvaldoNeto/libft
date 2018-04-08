@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:25:30 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/07 19:15:09 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/08 20:35:08 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
-	int		i;
-	char	*str;
+	size_t		i;
+	char		*str;
 
 	if (s)
 	{

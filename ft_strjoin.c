@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:20:56 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/07 19:11:48 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/08 20:43:40 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	int		j;
-	char	*str;
+	int			i;
+	int			j;
+	char		*str;
 
 	if (s1 && s2)
 	{
-		i = ft_strlen((char *)s1);
-		j = ft_strlen((char *)s2);
+		i = (int)ft_strlen((char *)s1);
+		j = (int)ft_strlen((char *)s2);
 		if (!(str = (char *)malloc(sizeof(char) * (i + j + 1))))
 			return (NULL);
 		str[i + j] = '\0';

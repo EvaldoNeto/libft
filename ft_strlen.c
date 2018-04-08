@@ -6,21 +6,18 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:24:49 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/05 20:02:17 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/08 20:45:56 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
-	int counter;
+	size_t counter;
 
 	counter = 0;
-	while (*str)
-	{
-		str++;
+	while (str[counter])
 		counter++;
-	}
 	return (counter);
 }
