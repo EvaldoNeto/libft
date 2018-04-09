@@ -6,7 +6,7 @@
 #    By: eneto <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/19 14:56:05 by eneto             #+#    #+#              #
-#    Updated: 2018/04/06 14:59:31 by eneto            ###   ########.fr        #
+#    Updated: 2018/04/09 18:29:43 by eneto            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -69,7 +69,13 @@ SRCS =		ft_atoi.c	\
 		ft_strtrim.c	\
 		ft_tolower.c	\
 		ft_toupper.c	\
-		ft_itoa.c
+		ft_itoa.c		\
+		ft_lstnew.c		\
+		ft_lstdelone.c	\
+		ft_lstdel.c		\
+		ft_lstadd.c		\
+		ft_lstiter.c	\
+		ft_lstmap.c
 
 OBJ = $(SRCS:.c=.o)
 

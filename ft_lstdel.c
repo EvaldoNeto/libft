@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 15:21:38 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/09 16:35:39 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/09 18:58:20 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,18 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
 	t_list *after;
 
-	if (alst)
+	if (alst && del)
 	{
 		after = *alst;
 		while ((*alst)->next)
 		{
 			after = (*alst)->next;
-			(*del)((*alst)->content, (*alst)->content_size);
-			free(*alst);
-			*alst = NULL;
+			ft_lstdelone(alst, del);
+			if (!after)
+				break ;
 			alst = &after;
 		}
-		(*del)((*alst)->content, (*alst)->content_size);
-		free(*alst);
-		*alst = NULL;
+		if (*alst)
+			ft_lstdelone(alst, del);
 	}
 }

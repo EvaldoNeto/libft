@@ -6,11 +6,11 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 13:30:13 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/08 20:41:43 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/09 19:51:47 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static unsigned int	mod(int n)
 {
