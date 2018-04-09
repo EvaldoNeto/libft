@@ -17,6 +17,13 @@
 # include <unistd.h>
 # include <string.h>
 
+typedef struct		s_list
+{
+	void		*content;
+	size_t		content_size;
+ 	struct s_list	*next;
+}			t_list;
+
 void		ft_putchar(char c);
 void		ft_putstr(char *str);
 void		ft_putendl(char const *s);
@@ -69,5 +76,6 @@ char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strtrim(char const *s);
 char		**ft_strsplit(char const *s, char c);
 char		*ft_itoa(int n);
+t_list		*ft_lstnew(void const *content, size_t content_size);
 
 #endif
