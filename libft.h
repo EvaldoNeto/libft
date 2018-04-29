@@ -6,7 +6,7 @@
 /*   By: eneto <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 19:42:22 by eneto             #+#    #+#             */
-/*   Updated: 2018/04/09 18:30:38 by eneto            ###   ########.fr       */
+/*   Updated: 2018/04/26 17:35:23 by eneto            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,14 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_btree
+{
+	void			*data;
+	size_t			data_size;
+	struct s_btree	*right;
+	struct s_btree	*left;
+}					t_btree;
 
 void				ft_putchar(char c);
 void				ft_putstr(char *str);
@@ -83,5 +91,28 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_btree				*btree_create_node(void const *data, size_t data_size);
+void				btree_apply_postorder(t_btree *root,
+					void (*applyf)(void *));
+int					btree_node_level(t_btree *root, t_btree *node, int i);
+int					ft_max(int a, int b);
+int					btree_height(t_btree *root);
+void				btree_print(t_btree *root, int n, void (*print)(void *));
+void				btree_print_level(t_btree *root, int level);
+int					ft_power(int base, int n);
+int					btree_nodes_per_level(t_btree *root, int level);
+void				btree_nodes_in_level(t_btree **dest, t_btree *root,
+					int level);
+t_btree				*btree_insert_data(t_btree *root, void *data,
+					size_t data_size, int (*cmpf)(void *, void *));
+t_btree				*btree_right_rotate(t_btree *node);
+t_btree				*btree_left_rotate(t_btree *node);
+t_btree				*btree_insert_avl(t_btree **root, void *data,
+					size_t data_size, int (*cmpf)(void *, void *));
+t_btree				*btree_search_data(t_btree *root, void *data,
+					int (*cmpf)(void *, void *));
+t_btree *btree_min(t_btree *root);
+char *ft_strjoin_free(char *s1, char *s2);
+t_btree *btree_deletenode_avl(t_btree **root, void *data, int (*cmpf)(void *, void *), void (*del)(void *));
 
 #endif
