@@ -12,6 +12,7 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE 4098
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -32,6 +33,13 @@ typedef struct		s_btree
 	struct s_btree	*left;
 }					t_btree;
 
+typedef struct	s_file
+{
+	char		*buffer;
+	int			fd;
+}				t_file;
+
+int				get_next_line(const int fd, char **line);
 void				ft_putchar(char c);
 void				ft_putstr(char *str);
 void				ft_putendl(char const *s);
